@@ -1,0 +1,8 @@
+Django==4.2.4
+djangorestframework==3.14.0
+django-stubs==4.2.3
+django-cors-headers==4.2.0
+PyMySQL==1.1.0
+PyMySQL[rsa]==1.1.0
+python-dotenv==1.0.0
+PyJWT==2.8.0

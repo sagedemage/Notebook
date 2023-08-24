@@ -1,0 +1,28 @@
+name: Front-end
+
+on:
+  pull_request:
+    branches: [ 'main' ]
+  push:
+    branches: [ '*' ]
+
+jobs:
+  lighthouseci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+      - name: Install Dependencies and Build Vue App
+        working-directory: ./frontend
+        run: npm install && npm install vue-router@4 && npm install -g @lhci/cli@0.11.x
+      - name: Run ESLint
+        working-directory: ./frontend
+        run: npm run lint
+      - name: Build Vue App
+        working-directory: ./frontend
+        run: npm run build
+      - name: Run Lighthouse CI
+        working-directory: ./frontend
+        run: lhci autorun
