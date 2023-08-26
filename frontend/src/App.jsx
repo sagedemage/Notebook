@@ -6,8 +6,6 @@ import Login from './components/pages/Login'
 import Register from './components/pages/Register'
 import Dashboard from './components/pages/Dashboard'
 import Navigationbar from './components/ui/Navigationbar'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
