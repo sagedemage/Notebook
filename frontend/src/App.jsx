@@ -2,15 +2,15 @@ import { useState, Suspense, lazy } from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 /* UI Components */
-import NavigationBar from './components/ui/NavigationBar'
+const NavigationBar = lazy(() => import('./components/ui/NavigationBar'))
 
 /* Page Components */
-import Home from './components/pages/Home'
-import About from './components/pages/About'
-import Login from './components/pages/Login'
-import Register from './components/pages/Register'
-import Dashboard from './components/pages/Dashboard'
-import PageNotFound from './components/pages/PageNotFound'
+const Home = lazy(() => import('./components/pages/Home'))
+const About = lazy(() => import('./components/pages/About'))
+const Login = lazy(() => import('./components/pages/Login'))
+const Register = lazy(() => import('./components/pages/Register'))
+const Dashboard = lazy(() => import('./components/pages/Dashboard'))
+const PageNotFound = lazy(() => import('./components/pages/PageNotFound'))
 
 import './App.css'
 
