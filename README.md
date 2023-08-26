@@ -32,3 +32,6 @@ npm run dev
 ## Recommended IDE Setup for Frontend
 [Recommended IDE Setup for Frontend](docs/recommended_ide_setup_for_frontend.md)
 
+## Why Use Vite for React
+[Why use Vite for React](./docs/why_use_vite_for_react.md)
+
