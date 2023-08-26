@@ -10,9 +10,9 @@ import About from './components/pages/About'
 import Login from './components/pages/Login'
 import Register from './components/pages/Register'
 import Dashboard from './components/pages/Dashboard'
+import PageNotFound from './components/pages/PageNotFound'
 
 import './App.css'
-import PageNotFound from './components/pages/PageNotFound'
 
 function App() {
   const [count, setCount] = useState(0)
