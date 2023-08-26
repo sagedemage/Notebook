@@ -15,8 +15,6 @@ const PageNotFound = lazy(() => import('./components/pages/PageNotFound'))
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div id="body">
       <NavigationBar />
