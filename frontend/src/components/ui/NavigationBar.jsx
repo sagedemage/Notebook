@@ -4,7 +4,7 @@ import { Nav } from "react-bootstrap"
 import { Navbar } from "react-bootstrap"
 import { NavDropdown } from "react-bootstrap"
 
-export default function Navigationbar() {
+export default function NavigationBar() {
     return (
         <>
             <Navbar expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark" fixed="top">
