@@ -1,0 +1,25 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, Roboto, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  /* Body layout for the fixed navigation bar */
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2.8em;
+  line-height: 1.1;
+}

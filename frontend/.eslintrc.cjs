@@ -1,27 +1,34 @@
-/* eslint-env node */
 module.exports = {
-  "root": true,
-  "extends": [
-    "plugin:vue/vue3-essential",
-    "eslint:recommended"  
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
   ],
-  parserOptions: {
-    ecmaVersion: "latest"
-  },
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  settings: { react: { version: '18.2' } },
+  plugins: ['react-refresh'],
   rules: {
-    "eqeqeq": "error",
-    "curly": "error",
-    "quotes": [
-        "error", 
-        "double"
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
     ],
-    "no-unused-vars": [
-        "error",
-        {
-            "vars": "all",
-            "args": "after-used",     
-            "ignoreRestSiblings": false 
-         }
-      ]
-}
+    'eqeqeq': 'error',
+    'curly': 'error',
+    'quotes': [
+      'error',
+      'single'
+    ],
+    'no-unused-vars': [
+      'error',
+      {
+        'vars': 'all',
+        'args': 'after-used',
+        'ignoreRestSiblings': false
+      }
+    ]
+  },
 }

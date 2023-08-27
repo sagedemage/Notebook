@@ -23,12 +23,6 @@ npm install
 npm run dev
 ```
 
-## Branch Naming Scheme
-[Branch Naming Scheme](docs/branch_naming_scheme.md)
-
-## Frontend Cli
-[Frontend Cli](docs/frontend_cli.md)
-
-## Recommended IDE Setup for Frontend
-[Recommended IDE Setup for Frontend](docs/recommended_ide_setup_for_frontend.md)
+## Why Use Vite for React
+[Why use Vite for React](./docs/why_use_vite_for_react.md)
 
