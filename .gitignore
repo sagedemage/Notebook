@@ -34,3 +34,9 @@ __pycache__/
 
 # Ignore lighthouse directory
 .lighthouseci
+
+# Media files
+*.kra
+
+# Cache files
+*.*~
