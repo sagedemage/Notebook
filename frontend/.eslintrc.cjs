@@ -16,5 +16,19 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'eqeqeq': 'error',
+    'curly': 'error',
+    'quotes': [
+      'error',
+      'single'
+    ],
+    'no-unused-vars': [
+      'error',
+      {
+        'vars': 'all',
+        'args': 'after-used',
+        'ignoreRestSiblings': false
+      }
+    ]
   },
 }

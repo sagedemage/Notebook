@@ -1,5 +1,5 @@
-import { useState, Suspense, lazy } from 'react'
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { Suspense, lazy } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 /* UI Components */
 const NavigationBar = lazy(() => import('./components/ui/NavigationBar'))
