@@ -1,6 +1,9 @@
 import { Suspense, lazy } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+/* Auth Components */
+const AuthRoute = lazy(() => import("./components/auth/auth_route"))
+
 /* UI Components */
 const NavigationBar = lazy(() => import('./components/ui/NavigationBar'))
 
@@ -26,8 +29,12 @@ function App() {
               <Route path="about" element={<About />}></Route>
               <Route path="login" element={<Login />}></Route>
               <Route path="register" element={<Register />}></Route>
-              <Route path="dashboard" element={<Dashboard />}></Route>
               <Route path="*" element={<PageNotFound />}></Route>
+
+              {/* Auth Route */}
+              <Route element={<AuthRoute />}>
+                <Route path="dashboard" element={<Dashboard />}></Route>
+              </Route>
             </Routes>
           </Suspense>
         </BrowserRouter>

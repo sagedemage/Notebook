@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react"
 import Cookies from "universal-cookie"
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -38,7 +40,7 @@ export default function Login() {
                 // set cookie
                 cookies.set("token", response.data.token)
                 console.log("Success")
-                //windows.locations.href = "/dashboard"
+                navigate("/dashboard")
             }
             else {
                 // display error message
