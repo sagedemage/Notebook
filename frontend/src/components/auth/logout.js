@@ -6,8 +6,8 @@ export const Logout = () => {
     //const navigate = useNavigate();
 
     // remove cookie token
-    cookies.remove("token")
+    cookies.remove('token')
 
     // redirect to the home page
-    window.location.href= "/"
+    window.location.href= '/'
 }

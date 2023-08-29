@@ -1,21 +1,14 @@
 /* Login Page */
 
-import { useEffect, useState } from "react"
-import Cookies from "universal-cookie"
-import axios from "axios"
+import { useState } from 'react'
+import Cookies from 'universal-cookie'
+import axios from 'axios'
 
 export default function Login() {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     const [error_status, setErrorStatus] = useState(false);
-    const [success_status, setSuccessStatus] = useState(false);
-    const [msg_error, setMsgError] = useState("");
-
-    useEffect(() => {
-        if (error_status === true) {
-            setSuccessStatus(false)
-        }
-    }, [error_status])
+    const [msg_error, setMsgError] = useState('');
 
     const handleUsernameChange = err => {
         setUsername(err.target.value)
@@ -28,16 +21,16 @@ export default function Login() {
     const handleSubmit = async err => {
         /* Login and create User Session Cookie */
         err.preventDefault();
-        axios.post("http://localhost:8000/api/login", {
+        axios.post('http://localhost:8000/api/login', {
             username: username,
             password: password,
         }).then((response) => {
             const cookies = new Cookies();
             if (response.data.auth === true) {
                 // set cookie
-                cookies.set("token", response.data.token)
-                console.log("Success")
-                window.location.href = "/dashboard"
+                cookies.set('token', response.data.token)
+                console.log('Success')
+                window.location.href = '/dashboard'
             }
             else {
                 // display error message
@@ -55,11 +48,6 @@ export default function Login() {
                 <div className="alert alert-danger" roles="alert">
                     { msg_error }
                 </div>
-             }
-             { success_status === true && 
-                <div className="alert alert-success" roles="alert">
-                    { msg_success }
-                </div> 
              }
             <h1>Login</h1>
             <form method="post" onSubmit={handleSubmit}>

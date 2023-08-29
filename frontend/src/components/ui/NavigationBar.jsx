@@ -1,11 +1,8 @@
 /* Navigation Bar */
-import { useEffect, useState } from 'react'
-import { Button, Container, NavDropdown } from 'react-bootstrap'
+import { Container, NavDropdown } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap'
 import { Navbar } from 'react-bootstrap'
 import { Logout } from '../auth/logout'
-import Cookies from 'universal-cookie'
-import axios from 'axios'
 
 export default function NavigationBar({isAuth}) {
     return (

@@ -1,8 +1,5 @@
 
-import { Navigate, Outlet, useLocation } from "react-router-dom"
-import axios from "axios"
-import { useEffect, useState } from "react"
-import Cookies from "universal-cookie"
+import { Navigate, Outlet, useLocation } from 'react-router-dom'
 
 export default function AuthRoute({isAuth}) {
     const origin = useLocation()

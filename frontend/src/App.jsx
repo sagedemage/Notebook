@@ -4,7 +4,7 @@ import Cookies from 'universal-cookie'
 import axios from 'axios'
 
 /* Auth Components */
-const AuthRoute = lazy(() => import("./components/auth/auth_route"))
+const AuthRoute = lazy(() => import('./components/auth/auth_route'))
 
 /* UI Components */
 const NavigationBar = lazy(() => import('./components/ui/NavigationBar'))
@@ -25,9 +25,9 @@ function App() {
   useEffect(() => {
     /* Check authentication of the app */
     const cookies = new Cookies()
-    const token = cookies.get("token")
+    const token = cookies.get('token')
     if (token !== undefined) {
-      axios.post("http://localhost:8000/api/get-decoded-token", {
+      axios.post('http://localhost:8000/api/get-decoded-token', {
         token: token,
       }).then((response) => {
         if (response.data.auth === true) {
