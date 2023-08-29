@@ -30,7 +30,7 @@ module.exports = {
         'ignoreRestSiblings': false
       }
     ],
-    'react/prop-types': 'warn',
-    'react/no-unknown-property': 'warn',
+    'react/prop-types': 'off',
+    'react/no-unknown-property': 'off',
   },
 }
