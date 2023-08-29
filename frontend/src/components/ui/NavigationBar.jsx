@@ -7,31 +7,7 @@ import { Logout } from '../auth/logout'
 import Cookies from 'universal-cookie'
 import axios from 'axios'
 
-export default function NavigationBar() {
-    const [isAuth, setAuth] = useState(false)
-    useEffect(() => {
-        const cookies = new Cookies()
-        const token = cookies.get("token")
-        
-        if (token !== undefined) {
-            axios.post("http://localhost:8000/api/get-decoded-token", {
-                token: token,
-            }).then((response) => {
-                if (response.data.auth === true) {
-                    setAuth(true)
-                }
-                else {
-                    setAuth(false)
-                }
-            }).catch(err => {
-                console.log(err)
-            })
-        }
-        else {
-            setAuth(false)
-        }
-    }, [])
-
+export default function NavigationBar({isAuth}) {
     return (
         <>
             <Navbar expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark" fixed="top">

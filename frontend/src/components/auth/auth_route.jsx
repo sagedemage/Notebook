@@ -4,32 +4,8 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import Cookies from "universal-cookie"
 
-export default function AuthRoute() {
+export default function AuthRoute({isAuth}) {
     const origin = useLocation()
-    const [isAuth, setAuth] = useState(false)
-
-    useEffect(() => {
-        /* Check authentication of the app */
-        const cookies = new Cookies()
-        const token = cookies.get("token")
-        if (token !== undefined) {
-            axios.post("http://localhost:8000/api/get-decoded-token", {
-                token: token,
-            }).then((response) => {
-                if (response.data.auth === true) {
-                    setAuth(true)
-                }
-                else {
-                    setAuth(false)
-                }
-            }).catch(err => {
-                console.log(err)
-            })
-        }
-        else {
-            setAuth(false)
-        }
-    }, [])
 
     if (isAuth !== true) {
         return (
