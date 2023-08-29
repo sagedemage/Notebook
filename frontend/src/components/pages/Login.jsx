@@ -42,7 +42,7 @@ export default function Login() {
             else {
                 // display error message
                 setErrorStatus(true)
-                setMsgError(response.data.msg_error)
+                setMsgError(response.data.err_msg)
             }
         }).catch(err => {
             console.log(err)
