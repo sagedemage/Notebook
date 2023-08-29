@@ -1,8 +1,9 @@
 /* Navigation Bar */
 import { useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap'
+import { Button, Container, NavDropdown } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap'
 import { Navbar } from 'react-bootstrap'
+import { Logout } from '../auth/logout'
 import Cookies from 'universal-cookie'
 import axios from 'axios'
 
@@ -52,7 +53,10 @@ export default function NavigationBar() {
                         {/* Auth Links */}
                         { isAuth === true &&
                             <Nav className='ms-auto'>
-                                <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+                                <NavDropdown id="nav-dropdown" title="Account" menuVariant="dark">
+                                    <NavDropdown.Item href="/dashboard">Notes</NavDropdown.Item>
+                                    <NavDropdown.Item onClick={() => Logout()}>Logout</NavDropdown.Item>
+                                </NavDropdown>
                             </Nav>
                         }
                     </Navbar.Collapse>
