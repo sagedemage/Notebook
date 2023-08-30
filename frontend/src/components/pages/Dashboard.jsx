@@ -1,12 +1,12 @@
 /* Dashboard Page */
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Cookies from "universal-cookie";
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Cookies from 'universal-cookie';
 import axios from 'axios'
 
 import './Dashboard.css'
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function Dashboard() {
     /* View Notes Page (Dashboard Page) */
@@ -130,7 +130,7 @@ export default function Dashboard() {
                         description: description_add,
                         user_id: user_id
                     }).then(() => {
-                        window.location.href = "/dashboard"
+                        window.location.href = '/dashboard'
                     }).catch(err => {
                         console.log(err)
                     })
@@ -158,7 +158,7 @@ export default function Dashboard() {
 
     /* Delete Note */
     const handleDeleteNote = async (note_id) => {
-        const delete_note = confirm("Are you sure you want to delete the note?")
+        const delete_note = confirm('Are you sure you want to delete the note?')
         console.log(delete_note)
         if (delete_note === true) {
             axios.delete('http://localhost:8000/api/delete-note', {
@@ -186,7 +186,7 @@ export default function Dashboard() {
                                 <Button variant="primary" onClick={() => handleShowEditNote(note['id'])}>Edit</Button>
                             </div>
                             <div className="col col-md-auto">
-                                <Button variant="danger" onClick={() => handleDeleteNote(note["id"])}>
+                                <Button variant="danger" onClick={() => handleDeleteNote(note['id'])}>
                                     Delete
                                 </Button>
                             </div>
