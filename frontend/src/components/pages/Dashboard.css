@@ -1,0 +1,14 @@
+.note-title {
+	border-bottom: 2px solid #DADADA;
+	padding-bottom: 5px;
+}
+
+.note-entry {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.modal {
+	position: fixed;
+	top: 15vh;
+}
