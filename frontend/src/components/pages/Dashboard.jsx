@@ -67,20 +67,20 @@ export default function Dashboard() {
     Handle title and description changes
     for the edit and note forms
     */
-    const handleTitleEditChange = err => {
-        setTitleEdit(err.target.value)
+    const handleTitleEditChange = event => {
+        setTitleEdit(event.target.value)
     }
 
-    const handleDescriptionEditChange = err => {
-        setDescriptionEdit(err.target.value)
+    const handleDescriptionEditChange = event => {
+        setDescriptionEdit(event.target.value)
     }
 
-    const handleTitleAddChange = err => {
-        setTitleAdd(err.target.value)
+    const handleTitleAddChange = event => {
+        setTitleAdd(event.target.value)
     }
 
-    const handleDescriptionAddChange = err => {
-        setDescriptionAdd(err.target.value)
+    const handleDescriptionAddChange = event => {
+        setDescriptionAdd(event.target.value)
     }
 
     useEffect(() => {
@@ -111,9 +111,9 @@ export default function Dashboard() {
         }
     }, [notes])
 
-    const handleAddSubmit = async (err) => {
+    const handleAddSubmit = async (event) => {
         /* Add Note Submission */
-        err.preventDefault()
+        event.preventDefault()
         const cookies = new Cookies()
         const token = cookies.get('token')
         let user_id = undefined
@@ -140,9 +140,9 @@ export default function Dashboard() {
         }
     }
 
-    const handleEditSubmit = async (err) => {
+    const handleEditSubmit = async (event) => {
         /* Edit Note Submission */
-        err.preventDefault()
+        event.preventDefault()
         axios.patch('http://localhost:8000/api/edit-note', {
             note_id: note_id,
             title: title_edit,
