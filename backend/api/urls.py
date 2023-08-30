@@ -14,7 +14,7 @@ urlpatterns = [
         # note CRUD operations
         path('add-note', note.add_note, name='add_note'),
         path('fetch-note', note.fetch_note, name='fetch_note'),
-        path('update-note', note.update_note, name='update_note'),
+        path('edit-note', note.edit_note, name='edit_note'),
         path('delete-note', note.delete_note, name='delete_note'),
 
         # view the list of all notes
