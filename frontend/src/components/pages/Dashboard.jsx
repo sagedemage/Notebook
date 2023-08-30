@@ -45,12 +45,6 @@ export default function Dashboard() {
 
     const handleShowAddNote = () => setShowAddNote(true)
 
-    function handleShowDeleteNoteConfirm(note_id) {
-        /* Open Delete Confirm Popup Window */
-        setNoteId(parseInt(note_id))
-        setShowDeleteNoteConfirm(true)
-    }
-
     function handleShowEditNote(note_id) {
         /* Open Edit Note Form Popup Window */
         // Fetch Note
@@ -102,14 +96,14 @@ export default function Dashboard() {
                 if (response.data.user_id !== undefined) {
                     user_id = response.data.user_id
                     axios.get('http://localhost:8000/api/view-notes?user_id=' + user_id)
-                    .then((response) => {
-                        setNotes(response.data.rows)
-                        console.log(response.data.rows)
-                        console.log(user_id)
-                        console.log(notes)
-                    }).catch(err => {
-                        console.log(err)
-                    })
+                        .then((response) => {
+                            setNotes(response.data.rows)
+                            console.log(response.data.rows)
+                            console.log(user_id)
+                            console.log(notes)
+                        }).catch(err => {
+                            console.log(err)
+                        })
                 }
             }).catch(err => {
                 console.log(err)
@@ -163,16 +157,19 @@ export default function Dashboard() {
     }
 
     /* Delete Note */
-    const handleDeleteNote = async (e) => {
-        e.preventDefault()
-        axios.delete('http://localhost:8000/api/delete-note', {
-            data: { note_id: note_id },
-        }).then(() => {
-            // redirect to the dashboard
-            window.location.reload()
-        }).catch(err => {
-            console.log(err)
-        })
+    const handleDeleteNote = async (note_id) => {
+        const delete_note = confirm("Are you sure you want to delete the note?")
+        console.log(delete_note)
+        if (delete_note === true) {
+            axios.delete('http://localhost:8000/api/delete-note', {
+                data: { note_id: note_id },
+            }).then(() => {
+                // redirect to the dashboard
+                window.location.reload()
+            }).catch(err => {
+                console.log(err)
+            })
+        }
     }
 
     return (
@@ -189,7 +186,7 @@ export default function Dashboard() {
                                 <Button variant="primary" onClick={() => handleShowEditNote(note['id'])}>Edit</Button>
                             </div>
                             <div className="col col-md-auto">
-                                <Button variant="danger" onClick={() => handleShowDeleteNoteConfirm(note["id"])}>
+                                <Button variant="danger" onClick={() => handleDeleteNote(note["id"])}>
                                     Delete
                                 </Button>
                             </div>
@@ -212,7 +209,7 @@ export default function Dashboard() {
                         <Form.Group className="mb-3">
                             <Form.Label>Description</Form.Label>
                             <Form.Control name="description" rows={3}
-                                as="textarea" 
+                                as="textarea"
                                 placeholder="Description"
                                 value={description_add}
                                 onChange={handleDescriptionAddChange}
@@ -254,20 +251,6 @@ export default function Dashboard() {
                 <Modal.Footer>
                     <Button variant="primary" type="submit" form="edit_note_form">Submit</Button>
                     <Button variant="secondary" onClick={handleCloseEditNote}>Close</Button>
-                </Modal.Footer>
-            </Modal>
-
-            {/* Delete Note */}
-            <Modal show={show_delete_note_confirm} onHide={handleCloseDeleteNoteConfirm}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Delete Note</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <p> You sure you want to delete the note? </p>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="danger" onClick={handleDeleteNote}>Delete</Button>
-                    <Button variant="secondary" onClick={handleCloseDeleteNoteConfirm}>Close</Button>
                 </Modal.Footer>
             </Modal>
         </>
