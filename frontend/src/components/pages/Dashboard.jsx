@@ -25,7 +25,6 @@ export default function Dashboard() {
     // Show Modals
     const [show_add_note, setShowAddNote] = useState(false)
     const [show_edit_note, setShowEditNote] = useState(false)
-    const [show_delete_note_confirm, setShowDeleteNoteConfirm] = useState(false)
 
     const handleCloseAddNote = () => {
         setShowAddNote(false)
@@ -37,10 +36,6 @@ export default function Dashboard() {
         setShowEditNote(false)
         setTitleEdit('')
         setDescriptionEdit('')
-    }
-
-    const handleCloseDeleteNoteConfirm = () => {
-        setShowDeleteNoteConfirm(false)
     }
 
     const handleShowAddNote = () => setShowAddNote(true)
