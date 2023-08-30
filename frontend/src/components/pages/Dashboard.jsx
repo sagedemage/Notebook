@@ -27,21 +27,26 @@ export default function Dashboard() {
     const [show_edit_note, setShowEditNote] = useState(false)
 
     const handleCloseAddNote = () => {
+        /* Close Add Note Modal */
         setShowAddNote(false)
         setTitleAdd('')
         setDescriptionAdd('')
     }
 
     const handleCloseEditNote = () => {
+        /* Close Edit Note Modal */
         setShowEditNote(false)
         setTitleEdit('')
         setDescriptionEdit('')
     }
 
-    const handleShowAddNote = () => setShowAddNote(true)
+    const handleShowAddNote = () => {
+        /* Show Add Note Modal */ 
+        setShowAddNote(true)
+    }
 
     function handleShowEditNote(note_id) {
-        /* Open Edit Note Form Popup Window */
+        /* Show Edit Note Modal */
         // Fetch Note
         axios.get('http://localhost:8000/api/fetch-note?id=' + note_id)
             .then((response) => {
@@ -106,9 +111,8 @@ export default function Dashboard() {
         }
     }, [notes])
 
-    /* Add Note */
     const handleAddSubmit = async (err) => {
-        /* Add New Note Submission */
+        /* Add Note Submission */
         err.preventDefault()
         const cookies = new Cookies()
         const token = cookies.get('token')
@@ -136,8 +140,8 @@ export default function Dashboard() {
         }
     }
 
-    /* Edit Note */
     const handleEditSubmit = async (err) => {
+        /* Edit Note Submission */
         err.preventDefault()
         axios.patch('http://localhost:8000/api/edit-note', {
             note_id: note_id,
@@ -151,8 +155,8 @@ export default function Dashboard() {
         })
     }
 
-    /* Delete Note */
     const handleDeleteNote = async (note_id) => {
+        /* Delete Note Submission */
         const delete_note = confirm('Are you sure you want to delete the note?')
         console.log(delete_note)
         if (delete_note === true) {
@@ -190,7 +194,7 @@ export default function Dashboard() {
                 )
             })}
 
-            {/* Add Note */}
+            {/* Add Note Modal */}
             <Modal className="modal" show={show_add_note} onHide={handleCloseAddNote}>
                 <Modal.Header closeButton>
                     <Modal.Title>Add Note</Modal.Title>
@@ -218,7 +222,7 @@ export default function Dashboard() {
                 </Modal.Footer>
             </Modal>
 
-            {/* Edit Note */}
+            {/* Edit Note Modal */}
             <Modal show={show_edit_note} onHide={handleCloseEditNote}>
                 <Modal.Header closeButton>
                     <Modal.Title>Edit Note</Modal.Title>
