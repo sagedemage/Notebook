@@ -109,7 +109,7 @@ export default function Dashboard() {
                 console.log(err)
             })
         }
-    }, [])
+    }, [notes])
 
     /* Add Note */
     const handleAddSubmit = async (err) => {
