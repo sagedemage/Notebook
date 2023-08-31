@@ -1,6 +1,7 @@
 /* Register Page */
 
 import { useState } from "react"
+import axios from "axios"
 
 export default function Register() {
     const [email, setEmail] = useState('')
@@ -48,16 +49,14 @@ export default function Register() {
             axios.post('http://localhost:8000/api/register', {
                 email: email,
                 username: username,
-                password: password,
-                confirm: confirm
+                password: password
             }).then((response) => {
                 if (response.data.registered === true) {
-                    url.searchParams.append('msg_success', response.data.msg_success)
                     window.location.href = '/login'
                 }
                 else {
                     setErrorStatus(true)
-                    setMsgError(response.data.msg_error)
+                    setMsgError(response.data.err_msg)
                 }
             }).catch(event => {
                 console.log(event)
