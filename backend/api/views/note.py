@@ -33,7 +33,7 @@ def add_note(request):
 
 @csrf_exempt
 @api_view(['PATCH'])
-def update_note(request):
+def edit_note(request):
     """
     Request Parameters:
     - id: integer
@@ -42,7 +42,7 @@ def update_note(request):
     """
     serializer = NoteSerializer(data=request.data)
     if serializer.is_valid():
-        note_id = request.data.get("id")
+        note_id = request.data.get("note_id")
         note = Note.objects.get(id=note_id)
         note.title = request.data.get("title")
         note.description = request.data.get("description")
@@ -58,7 +58,7 @@ def delete_note(request):
     Request Parameters:
     - note_id: integer
     """
-    note_id = request.GET.get("id", "")
+    note_id = request.data.get("note_id")
     row = Note.objects.filter(id=note_id)
     row.delete()
     return HttpResponse("Delete Note")
