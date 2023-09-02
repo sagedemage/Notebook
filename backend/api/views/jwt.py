@@ -31,12 +31,12 @@ def get_decoded_token(request):
 
 
 def generate_token(user_id):
-    secret = os.getenv("JWT_SECRET")
+    secret = str(os.getenv("JWT_SECRET"))
     encoded = jwt.encode({"auth": True, "user_id": user_id}, secret, algorithm="HS256")
     return encoded
 
 
 def decode_token(encoded: bytes):
-    secret = os.getenv("JWT_SECRET")
+    secret = str(os.getenv("JWT_SECRET"))
     decoded = jwt.decode(encoded, secret, algorithms=["HS256"])
     return decoded

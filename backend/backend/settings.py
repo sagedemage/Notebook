@@ -16,6 +16,8 @@ from dotenv import load_dotenv
 
 import os
 
+import sys
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -92,6 +94,13 @@ DATABASES = {
     }
 }
 
+if 'test' in sys.argv or 'test_coverage' in sys.argv:
+    # Covers regular testing and django-coverage
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+
+if os.environ.get('CI'):
+    # Enable using SQLite in CI/CD
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
