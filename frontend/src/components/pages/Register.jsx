@@ -39,11 +39,11 @@ export default function Register() {
 
         if (password.length < 8) {
             setPwdErrorStatus(true)
-            setMsgError("password should be 8 characters or more")
+            setMsgError("Password should be 8 characters or more")
         }
         else if (password !== confirm) {
             setErrorStatus(true)
-            setMsgError("passwords do not match")
+            setMsgError("Passwords do not match")
         }
         else {
             axios.post('http://localhost:8000/api/register', {
