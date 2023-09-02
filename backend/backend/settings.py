@@ -16,6 +16,8 @@ from dotenv import load_dotenv
 
 import os
 
+import sys
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -89,12 +91,12 @@ DATABASES = {
         'PASSWORD': os.getenv("DB_PASSWORD"),
         'HOST': '127.0.0.1',
         'PORT': '3306',
-        'TEST':
-        {
-            'ENGINE': 'django.db.backends.sqlite3'
-        }
     }
 }
+
+if 'test' in sys.argv or 'test_coverage' in sys.argv:
+    # Covers regular testing and django-coverage
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 
 # Password validation
