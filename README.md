@@ -1,4 +1,6 @@
 # Notebook 2
+[![Frontend Workflow](https://github.com/sagedemage/Notebook2/actions/workflows/frontend.yml/badge.svg)](https://github.com/sagedemage/Notebook2/actions/workflows/frontend.yml)
+[![Backend Workflow](https://github.com/sagedemage/Notebook2/actions/workflows/backend.yml/badge.svg)](https://github.com/sagedemage/Notebook2/actions/workflows/backend.yml)
 
 This template should help get you started developing with Vue 3 in Vite.
 
