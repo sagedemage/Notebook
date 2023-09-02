@@ -98,9 +98,6 @@ export default function Dashboard() {
                     axios.get('http://localhost:8000/api/view-notes?user_id=' + user_id)
                         .then((response) => {
                             setNotes(response.data.rows)
-                            console.log(response.data.rows)
-                            console.log(user_id)
-                            console.log(notes)
                         }).catch(err => {
                             console.log(err)
                         })
