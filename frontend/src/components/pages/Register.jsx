@@ -4,11 +4,13 @@ import { useState } from 'react'
 import axios from 'axios'
 
 export default function Register() {
+    /* Registation form data */
     const [email, setEmail] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-
     const [confirm, setConfirm] = useState('')
+
+    /* error statuses */
     const [error_status, setErrorStatus] = useState(false)
     const [pwd_error_status, setPwdErrorStatus] = useState(false)
     const [msg_error, setMsgError] = useState('')
