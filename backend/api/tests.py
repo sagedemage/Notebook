@@ -8,6 +8,7 @@ from rest_framework.test import APIClient
 
 class Auth(TestCase):
     client = APIClient()
+
     def test_register_success(self):
         response = self.client.post('/api/register', {'email': 'test1000@email.com', 'username': 'test1000', 'password': 'test1000'}, format='json')
         self.assertEquals(response.status_code, status.HTTP_200_OK)
