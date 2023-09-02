@@ -38,6 +38,7 @@ backend/notebook2
 
 # Media files
 *.kra
+*.xcf
 
 # Cache files
 *.*~
