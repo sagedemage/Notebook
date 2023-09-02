@@ -39,6 +39,7 @@ backend/notebook2
 # Media files
 *.kra
 *.xcf
+images/*.png
 
 # Cache files
 *.*~
