@@ -16,8 +16,7 @@ class Auth(TestCase):
 
     def test_register_failure(self):
         # Register a new user
-        self.client.post('/api/register',
-                         {'email': 'test1000@email.com', 'username': 'test1000', 'password': 'test1000'}, format='json')
+        self.client.post('/api/register', {'email': 'test1000@email.com', 'username': 'test1000', 'password': 'test1000'}, format='json')
 
         response = self.client.post('/api/register',
                                     {'email': 'test1000@email.com', 'username': 'test1000', 'password': 'test1000'},
