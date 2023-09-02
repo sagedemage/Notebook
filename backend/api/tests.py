@@ -20,7 +20,7 @@ class Auth(TestCase):
 
         response = self.client.post('/api/register',{'email': 'test1000@email.com', 'username': 'test1000', 'password': 'test1000'}, format='json')
         self.assertEquals(response.status_code, status.HTTP_200_OK)
-        self.assertEquals(response.content, b'{"registered": true, "success_msg": "User Registration Success"}')
+        self.assertEquals(response.content, b'{"registered": false, "err_msg": "Email already exists!"}')
 
     def test_login_success(self):
         # Register user
