@@ -1,8 +1,8 @@
 # Notebook 2
-![web app screenshot](./images/web_app_screenshot.webp)
-
 [![Frontend Workflow](https://github.com/sagedemage/Notebook2/actions/workflows/frontend.yml/badge.svg)](https://github.com/sagedemage/Notebook2/actions/workflows/frontend.yml)
 [![Backend Workflow](https://github.com/sagedemage/Notebook2/actions/workflows/backend.yml/badge.svg)](https://github.com/sagedemage/Notebook2/actions/workflows/backend.yml)
+
+![web app screenshot](./images/web_app_screenshot.webp)
 
 ## Purpose
 This is a note taking app. I create notes when learning new technologies and remembering what was in my mind the last time. My goal is is to create a note taking web app I can host on a web server.
