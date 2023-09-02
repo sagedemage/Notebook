@@ -31,12 +31,15 @@ coverage
 backend/venv/
 __pycache__/
 .env
+backend/notebook2
 
 # Ignore lighthouse directory
 .lighthouseci
 
 # Media files
 *.kra
+*.xcf
+images/*.png
 
 # Cache files
 *.*~

@@ -2,7 +2,10 @@
 [![Frontend Workflow](https://github.com/sagedemage/Notebook2/actions/workflows/frontend.yml/badge.svg)](https://github.com/sagedemage/Notebook2/actions/workflows/frontend.yml)
 [![Backend Workflow](https://github.com/sagedemage/Notebook2/actions/workflows/backend.yml/badge.svg)](https://github.com/sagedemage/Notebook2/actions/workflows/backend.yml)
 
-This template should help get you started developing with Vue 3 in Vite.
+![web app screenshot](./images/web_app_screenshot.webp)
+
+## Purpose
+This is a note taking app. I create notes when learning new technologies and remembering what was in my mind the last time. My goal is is to create a note taking web app I can host on a web server.
 
 ## Backend Setup
 
