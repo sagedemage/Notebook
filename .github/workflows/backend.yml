@@ -19,7 +19,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Start up the database
         working-directory: ./backend
-        run: docker compose up
+        run: docker compose up -d
       - name: Test with Django
         working-directory: ./backend
         run: python3 manage.py test
