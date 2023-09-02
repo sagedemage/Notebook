@@ -1,4 +1,4 @@
-name: Front-end
+name: Back-end
 
 on:
   pull_request:
