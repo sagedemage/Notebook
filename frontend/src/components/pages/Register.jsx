@@ -1,7 +1,7 @@
 /* Register Page */
 
-import { useState } from "react"
-import axios from "axios"
+import { useState } from 'react'
+import axios from 'axios'
 
 export default function Register() {
     const [email, setEmail] = useState('')
@@ -39,11 +39,11 @@ export default function Register() {
 
         if (password.length < 8) {
             setPwdErrorStatus(true)
-            setMsgError("Password should be 8 characters or more")
+            setMsgError('Password should be 8 characters or more')
         }
         else if (password !== confirm) {
             setErrorStatus(true)
-            setMsgError("Passwords do not match")
+            setMsgError('Passwords do not match')
         }
         else {
             axios.post('http://localhost:8000/api/register', {
