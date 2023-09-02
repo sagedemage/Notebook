@@ -106,13 +106,13 @@ export default function Register() {
                             }
                         </div>
                         <div className="form-group">
-							<label htmlFor="inputConfirm">Confirm</label>
-							<input type="password" className="form-control" id="inputConfirm"
-								name="confirm" placeholder="Enter password again"
-								value={confirm}
-								onChange={handleConfirmChange}
-								required />
-						</div>
+                            <label htmlFor="inputConfirm">Confirm</label>
+                            <input type="password" className="form-control" id="inputConfirm"
+                                name="confirm" placeholder="Enter password again"
+                                value={confirm}
+                                onChange={handleConfirmChange}
+                                required />
+                        </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
                 </div>
