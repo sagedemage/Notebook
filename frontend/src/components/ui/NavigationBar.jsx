@@ -4,10 +4,12 @@ import { Nav } from 'react-bootstrap'
 import { Navbar } from 'react-bootstrap'
 import { Logout } from '../auth/logout'
 
+import './NavigationBar.css'
+
 export default function NavigationBar({isAuth}) {
     return (
         <>
-            <Navbar expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark" fixed="top">
+            <Navbar bg="customBlue" expand="lg" className="bg-body-tertiary" data-bs-theme="dark" fixed="top">
                 <Container>
                     <Navbar.Brand href="/">Notebook</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
