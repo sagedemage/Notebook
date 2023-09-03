@@ -4,7 +4,7 @@ services:
     image: mysql:8.1
     restart: always
     environment:
-      - MYSQL_DATABASE=notebook2
+      - MYSQL_DATABASE=notebook
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
     ports:
       - '3306:3306'

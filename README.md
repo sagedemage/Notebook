@@ -1,4 +1,4 @@
-# Notebook 2
+# Notebook
 [![Frontend Workflow](https://github.com/sagedemage/Notebook2/actions/workflows/frontend.yml/badge.svg)](https://github.com/sagedemage/Notebook2/actions/workflows/frontend.yml)
 [![Backend Workflow](https://github.com/sagedemage/Notebook2/actions/workflows/backend.yml/badge.svg)](https://github.com/sagedemage/Notebook2/actions/workflows/backend.yml)
 
