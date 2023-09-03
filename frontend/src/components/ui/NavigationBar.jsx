@@ -4,7 +4,7 @@ import { Nav } from 'react-bootstrap'
 import { Navbar } from 'react-bootstrap'
 import { Logout } from '../auth/logout'
 
-import "./NavigationBar.css"
+import './NavigationBar.css'
 
 export default function NavigationBar({isAuth}) {
     return (
