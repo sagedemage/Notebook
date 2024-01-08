@@ -20,3 +20,17 @@ jobs:
       - name: Test with Django
         working-directory: ./backend
         run: python3 manage.py test
+
+  pylint_ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install Dependencies
+        working-directory: ./backend
+        run: pip install -r requirements.txt
+      - name: Lint the backend program using pylint
+        working-directory: ./backend
+        run: pylint --load-plugins pylint_django --django-settings-module=backend.settings api/*.py api/views/
