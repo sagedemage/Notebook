@@ -1,9 +1,10 @@
+""" Define API URLs """
+
 from django.urls import path
 
-from . import views
 from .views import note, auth, test, jwt
 
-urlpatterns = [
+urlpatterns = [  # pylint: disable=unused-variable
         # authentication
         path('register', auth.register, name='register'),
         path('login', auth.login, name='login'),
