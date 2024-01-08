@@ -1,4 +1,4 @@
-""" Row Operations """
+""" Note Operations """
 
 from django.http import HttpResponse
 from django.http import JsonResponse
@@ -10,7 +10,7 @@ from ..models import Note, User
 
 @csrf_exempt
 @api_view(['POST'])
-def add_note(request):
+def add_note(request):  # pylint: disable=unused-variable
     """
     Request Parameters:
     - title: string
@@ -27,13 +27,13 @@ def add_note(request):
         )
         note.save()
         return HttpResponse("Add Note")
-    else:
-        return HttpResponse("Data not valid")
+
+    return HttpResponse("Data not valid")
 
 
 @csrf_exempt
 @api_view(['PATCH'])
-def edit_note(request):
+def edit_note(request):  # pylint: disable=unused-variable
     """
     Request Parameters:
     - id: integer
@@ -48,12 +48,13 @@ def edit_note(request):
         note.description = request.data.get("description")
         note.save()
         return HttpResponse("Update Note")
-    else:
-        return HttpResponse("Data not valid")
+
+    return HttpResponse("Data not valid")
+
 
 @csrf_exempt
 @api_view(['DELETE'])
-def delete_note(request):
+def delete_note(request):  # pylint: disable=unused-variable
     """
     Request Parameters:
     - note_id: integer
@@ -63,9 +64,10 @@ def delete_note(request):
     row.delete()
     return HttpResponse("Delete Note")
 
+
 @csrf_exempt
 @api_view(['GET'])
-def view_notes(request):
+def view_notes(request):  # pylint: disable=unused-variable
     """
     Request Parameters:
     - note_id: integer
@@ -76,12 +78,13 @@ def view_notes(request):
         notes = Note.objects.filter(user_id__exact=user_id)
         serializer = NoteSerializer(notes, many=True)
         return JsonResponse({'rows': serializer.data})
-    else:
-        return HttpResponse("User does not exist")
+
+    return HttpResponse("User does not exist")
+
 
 @csrf_exempt
 @api_view(['GET'])
-def fetch_note(request):
+def fetch_note(request):  # pylint: disable=unused-variable
     """
     Route: /api/fetch-note?user_id={number}
     Example Route: /api/fetch-note?user_id=1
