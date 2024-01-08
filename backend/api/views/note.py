@@ -12,6 +12,7 @@ from ..models import Note, User
 @api_view(['POST'])
 def add_note(request):  # pylint: disable=unused-variable
     """
+    Add a note and store the user_id associated with the note
     Request Parameters:
     - title: string
     - description: string
@@ -35,6 +36,7 @@ def add_note(request):  # pylint: disable=unused-variable
 @api_view(['PATCH'])
 def edit_note(request):  # pylint: disable=unused-variable
     """
+    Update a note by id (Note id)
     Request Parameters:
     - id: integer
     - title: integer
@@ -56,6 +58,7 @@ def edit_note(request):  # pylint: disable=unused-variable
 @api_view(['DELETE'])
 def delete_note(request):  # pylint: disable=unused-variable
     """
+    Delete a note by id (Note id)
     Request Parameters:
     - note_id: integer
     """
@@ -69,6 +72,7 @@ def delete_note(request):  # pylint: disable=unused-variable
 @api_view(['GET'])
 def view_notes(request):  # pylint: disable=unused-variable
     """
+    Return the notes the user owns
     Request Parameters:
     - note_id: integer
     """
@@ -86,6 +90,7 @@ def view_notes(request):  # pylint: disable=unused-variable
 @api_view(['GET'])
 def fetch_note(request):  # pylint: disable=unused-variable
     """
+    Fetch a note by id (Note id)
     Route: /api/fetch-note?user_id={number}
     Example Route: /api/fetch-note?user_id=1
     URL Parameters:
