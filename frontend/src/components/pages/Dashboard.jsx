@@ -106,7 +106,7 @@ export default function Dashboard() {
                 console.log(err)
             })
         }
-    }, [notes])
+    }, [])
 
     const handleAddSubmit = async (event) => {
         /* Add Note Submission */
