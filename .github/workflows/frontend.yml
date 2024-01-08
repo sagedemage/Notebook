@@ -7,7 +7,7 @@ on:
     branches: [ '*' ]
 
 jobs:
-  eslintci:
+  eslint_ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,7 +21,7 @@ jobs:
         working-directory: ./frontend
         run: npm run lint
 
-  lighthouseci:
+  lighthouse_ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
