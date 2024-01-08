@@ -60,8 +60,8 @@ def delete_note(request):  # pylint: disable=unused-variable
     - note_id: integer
     """
     note_id = request.data.get("note_id")
-    row = Note.objects.filter(id=note_id)
-    row.delete()
+    note = Note.objects.filter(id=note_id)
+    note.delete()
     return HttpResponse("Delete Note")
 
 
