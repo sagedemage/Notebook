@@ -20,7 +20,6 @@ def add_note(request):  # pylint: disable=unused-variable
     """
     serializer = NoteSerializer(data=request.data)
     if serializer.is_valid():
-        # user = User.objects.filter(id=user_id)
         note = Note(
             title=request.data.get("title"),
             description=request.data.get("description"),
