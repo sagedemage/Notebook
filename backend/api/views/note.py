@@ -77,7 +77,7 @@ def view_notes(request):  # pylint: disable=unused-variable
     if user.exists():
         notes = Note.objects.filter(user_id__exact=user_id)
         serializer = NoteSerializer(notes, many=True)
-        return JsonResponse({'rows': serializer.data})
+        return JsonResponse({'notes': serializer.data})
 
     return HttpResponse("User does not exist")
 

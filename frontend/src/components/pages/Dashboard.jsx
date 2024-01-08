@@ -97,7 +97,7 @@ export default function Dashboard() {
                     user_id = response.data.user_id
                     axios.get('http://localhost:8000/api/view-notes?user_id=' + user_id)
                         .then((response) => {
-                            setNotes(response.data.rows)
+                            setNotes(response.data.notes)
                         }).catch(err => {
                             console.log(err)
                         })
