@@ -3,6 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
+import Alert from 'react-bootstrap/Alert';
 
 /**
  * Login Page Component
@@ -48,9 +49,9 @@ export default function Login() {
   return (
     <>
       {errorStatus === true &&
-        <div className="alert alert-danger" roles="alert">
+        <Alert variant='danger'>
           {msgError}
-        </div>
+        </Alert>
       }
       <h1>Login</h1>
       <form method="post" onSubmit={handleSubmit}>

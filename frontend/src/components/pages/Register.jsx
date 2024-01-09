@@ -1,7 +1,7 @@
 import React from 'react';
-
 import { useState } from 'react';
 import axios from 'axios';
+import Alert from 'react-bootstrap/Alert';
 
 /**
  * Register Page Component
@@ -70,9 +70,9 @@ export default function Register() {
   return (
     <>
       {errorStatus === true &&
-        <div className="alert alert-danger" role='alert'>
+        <Alert variant='danger'>
           {msgError}
-        </div>
+        </Alert>
       }
       <h1>Register</h1>
       <div className="row">
