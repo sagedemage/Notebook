@@ -1,5 +1,9 @@
-/* Register Page */
+import React from 'react';
 
+/**
+ * Page Not Found Page Component
+ * @returns {React.ReactHTMLElement} Returns the HTML element
+ */
 export default function PageNotFound() {
   return (
     <>

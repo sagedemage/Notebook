@@ -1,8 +1,12 @@
-/* Register Page */
+import React from 'react';
 
 import { useState } from 'react';
 import axios from 'axios';
 
+/**
+ * Register Page Component
+ * @returns {React.ReactHTMLElement} Returns the HTML element
+ */
 export default function Register() {
   /* Registation form data */
   const [email, setEmail] = useState('');

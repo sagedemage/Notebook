@@ -1,3 +1,4 @@
+import React from 'react';
 import { Suspense, lazy, useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cookies from 'universal-cookie';
@@ -19,6 +20,10 @@ const PageNotFound = lazy(() => import('./components/pages/PageNotFound'));
 
 import './App.css';
 
+/**
+ * Main App
+ * @returns {React.ReactHTMLElement} Returns the HTML element
+ */
 function App() {
   const [isAuth, setAuth] = useState(false);
 

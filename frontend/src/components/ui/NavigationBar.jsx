@@ -1,11 +1,17 @@
-/* Navigation Bar */
+import React from 'react';
 import { Container, NavDropdown } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
-import { logout } from '../auth/logout';
+import logout from '../auth/logout';
 
 import './NavigationBar.css';
 
+/**
+ * Navigation Bar UI Component
+ * @param {object} root0 Object containing the props
+ * @param {boolean} root0.isAuth isAuth prop to check authetication for a route
+ * @returns {React.ReactHTMLElement} Returns the HTML element
+ */
 export default function NavigationBar({ isAuth }) {
   return (
     <>

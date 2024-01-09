@@ -1,9 +1,13 @@
-/* Login Page */
+import React from 'react';
 
 import { useState } from 'react';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 
+/**
+ * Login Page Component
+ * @returns {React.ReactHTMLElement} Returns the HTML element
+ */
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

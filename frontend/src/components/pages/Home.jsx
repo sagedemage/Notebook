@@ -1,5 +1,9 @@
-/* Home Page */
+import React from 'react';
 
+/**
+ * Home Page Component
+ * @returns {React.ReactHTMLElement} Returns the HTML element
+ */
 export default function Home() {
   return (
     <>

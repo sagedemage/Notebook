@@ -1,4 +1,4 @@
-/* Dashboard Page */
+import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -8,6 +8,10 @@ import axios from 'axios';
 import './Dashboard.css';
 import { useEffect, useState } from 'react';
 
+/**
+ * Dashboard Page Component
+ * @returns {React.ReactHTMLElement} Returns the HTML element
+ */
 export default function Dashboard() {
   /* View Notes Page (Dashboard Page) */
   // Note
@@ -45,7 +49,7 @@ export default function Dashboard() {
     setShowAddNote(true);
   };
 
-  function handleShowEditNote(noteId) {
+  const handleShowEditNote = (noteId) => {
     /* Show Edit Note Modal */
     // Fetch Note
     axios.get('http://localhost:8000/api/fetch-note?id=' + noteId,
@@ -61,7 +65,7 @@ export default function Dashboard() {
     // set note id
     setNoteId(parseInt(noteId));
     setShowEditNote(true);
-  }
+  };
 
   /*
   Handle title and description changes
