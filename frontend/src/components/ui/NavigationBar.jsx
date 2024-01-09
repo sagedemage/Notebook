@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, NavDropdown } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
+import { PropTypes } from 'prop-types';
 import logout from '../auth/logout';
 
 import './NavigationBar.css';
@@ -57,3 +58,7 @@ export default function NavigationBar({ isAuth }) {
     </>
   );
 }
+
+NavigationBar.propTypes = {
+  isAuth: PropTypes.boolean,
+};

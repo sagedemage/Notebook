@@ -1,5 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 
 /**
  * Wrap Authentication for Routes
@@ -19,3 +20,7 @@ export default function AuthRoute({ isAuth }) {
 
   return <Outlet />;
 }
+
+AuthRoute.propTypes = {
+  isAuth: PropTypes.boolean,
+};
