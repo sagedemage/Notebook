@@ -20,7 +20,6 @@ module.exports = {
     ],
     'eqeqeq': 'error',
     'curly': 'error',
-    'react/no-unknown-property': 'off',
     'object-curly-spacing': 'off',
     'require-jsdoc': 'off',
     'valid-jsdoc': 'off',
