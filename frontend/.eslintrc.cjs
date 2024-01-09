@@ -6,6 +6,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
+    'google'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
@@ -32,5 +33,8 @@ module.exports = {
     ],
     'react/prop-types': 'off',
     'react/no-unknown-property': 'off',
+    'object-curly-spacing': 'off',
+    'require-jsdoc': 'off',
+    'valid-jsdoc': 'off',
   },
 }
