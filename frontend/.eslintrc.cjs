@@ -6,7 +6,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
-    'google'
+    'google',
+    'plugin:jsdoc/recommended-error'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
@@ -19,18 +20,6 @@ module.exports = {
     ],
     'eqeqeq': 'error',
     'curly': 'error',
-    'quotes': [
-      'error',
-      'single'
-    ],
-    'no-unused-vars': [
-      'error',
-      {
-        'vars': 'all',
-        'args': 'after-used',
-        'ignoreRestSiblings': false
-      }
-    ],
     'react/prop-types': 'off',
     'react/no-unknown-property': 'off',
     'object-curly-spacing': 'off',
