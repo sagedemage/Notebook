@@ -117,7 +117,7 @@ disable=
 output-format=text
 
 # Tells whether to display a full report or only the messages
-reports=yes
+reports=no
 
 # Activate the evaluation score.
 score=yes
@@ -371,6 +371,24 @@ max-attributes=11
 
 # Maximum number of statements in a try-block
 max-try-statements = 7
+
+[CLASSES]
+
+# List of method names used to declare (i.e. assign) instance attributes.
+defining-attr-methods=__init__,__new__,setUp,__post_init__
+
+# List of valid names for the first argument in a class method.
+valid-classmethod-first-arg=cls
+
+# List of valid names for the first argument in a metaclass class method.
+valid-metaclass-classmethod-first-arg=mcs
+
+# List of member names, which should be excluded from the protected access
+# warning.
+exclude-protected=_asdict,_fields,_replace,_source,_make
+
+# Warn about protected attribute access inside special methods
+check-protected-access-in-special-methods=no
 
 [IMPORTS]
 
