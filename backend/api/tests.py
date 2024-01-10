@@ -45,7 +45,8 @@ class AuthTest(TestCase):  # pylint: disable=unused-variable
         """ Test successful login """
 
         # Register user
-        self.client.post('/api/register', {'email': 'test1000@email.com', 'username': 'test1000', 'password': 'test1000'}, format='json')
+        self.client.post('/api/register',
+                         {'email': 'test1000@email.com', 'username': 'test1000', 'password': 'test1000'}, format='json')
 
         response = self.client.post('/api/login', {
             'username': 'test1000',
