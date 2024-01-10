@@ -1,9 +1,8 @@
 import React from 'react';
-import { Container, NavDropdown } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
-import { PropTypes } from 'prop-types';
-import logout from '../auth/logout';
+import AuthLinks from './AuthLinks';
 
 import './NavigationBar.css';
 
@@ -30,35 +29,10 @@ export default function NavigationBar({ isAuth }) {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/about">About</Nav.Link>
             </Nav>
-            {/* Non Auth Links */}
-            {isAuth === false &&
-              <Nav className='ms-auto'>
-                <Nav.Link href="/login">Login</Nav.Link>
-                <Nav.Link href="/register">Register</Nav.Link>
-              </Nav>
-            }
-            {/* Auth Links */}
-            {isAuth === true &&
-              <Nav className='ms-auto'>
-                <NavDropdown
-                  id="nav-dropdown"
-                  title="Account"
-                  menuVariant="dark">
-                  <NavDropdown.Item href="/dashboard">Notes</NavDropdown.Item>
-                  <NavDropdown.Item
-                    onClick={() => logout()}>
-                    Logout
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </Nav>
-            }
+            <AuthLinks isAuth={isAuth} />
           </Navbar.Collapse>
         </Container>
       </Navbar>
     </>
   );
 }
-
-NavigationBar.propTypes = {
-  isAuth: PropTypes.boolean,
-};
