@@ -10,12 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^1.5.0",
+    "axios": "^1.6.5",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.8.0",
+    "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.15.0",
-    "universal-cookie": "^6.1.0"
+    "react-router-dom": "^6.21.1",
+    "universal-cookie": "^7.0.1"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.5.3",
