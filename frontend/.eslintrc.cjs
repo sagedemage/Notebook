@@ -18,6 +18,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'eqeqeq': 'error',
+    'react/prop-types': 'off',
 
     /*
       Google Style Guide
