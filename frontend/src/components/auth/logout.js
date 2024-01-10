@@ -1,12 +1,15 @@
-import Cookies from 'universal-cookie'
+import Cookies from 'universal-cookie';
 
-export const Logout = () => {
-    /* Logout Action */
-    const cookies = new Cookies()
+/**
+ * Logout the User
+ */
+export default function logout() {
+  /* Logout Action */
+  const cookies = new Cookies();
 
-    // remove cookie token
-    cookies.remove('token')
+  // remove cookie token
+  cookies.remove('token');
 
-    // redirect to the home page
-    window.location.href= '/'
+  // redirect to the home page
+  window.location.href = '/';
 }
