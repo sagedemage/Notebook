@@ -474,7 +474,7 @@ docstring-min-length=12
 # Include a hint for the correct naming format with invalid-name
 include-naming-hint=no
 
-# Note: The defaults below for the naming convention follow the Google Python style guide
+# Starting Note: The naming convention defaults below follow the Google Python style guide
 
 # Naming style matching correct function names.
 function-naming-style=snake_case
@@ -503,7 +503,7 @@ module-naming-style=snake_case
 # Naming style matching correct method names.
 method-naming-style=snake_case
 
-# Note ends here
+# Ending Note: Note ends here
 
 # Naming style matching correct inline iteration names.
 inlinevar-naming-style=any
