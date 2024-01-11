@@ -74,7 +74,9 @@ def delete_note(request):
 def view_notes(request):
     """
     Return the notes the user owns
-    Request Parameters:
+    Route: /api/view-notes?user_id={number}
+    Example Route: /api/view-notes?user_id=1
+    URL Parameters:
     - user_id: integer
     """
     user_id = request.GET.get('user_id', '')
