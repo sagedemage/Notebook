@@ -6,6 +6,7 @@ from .models import User, Note
 
 class UserSerializer(serializers.ModelSerializer):  # pylint: disable=unused-variable
     """ Verify User Fields """
+
     class Meta:
         model = User
         fields = ['email', 'username', 'password']
@@ -13,7 +14,7 @@ class UserSerializer(serializers.ModelSerializer):  # pylint: disable=unused-var
 
 class NoteSerializer(serializers.ModelSerializer):  # pylint: disable=unused-variable
     """ Verify Note Fields """
+
     class Meta:
         model = Note
         fields = ['id', 'title', 'description']
-

@@ -21,7 +21,10 @@ class AuthTest(TestCase):  # pylint: disable=unused-variable
         }, format='json')
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.content, b'{"registered": true, "success_msg": "User Registration Success"}')
+        self.assertEqual(
+            response.content,
+            b'{"registered": true, "success_msg": "User Registration Success"}'
+        )
 
     def test_register_failure(self):
         """ Test failure user registration where the email already exists """
@@ -39,13 +42,22 @@ class AuthTest(TestCase):  # pylint: disable=unused-variable
         }, format='json')
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.content, b'{"registered": false, "err_msg": "Email already exists!"}')
+        self.assertEqual(
+            response.content,
+            b'{"registered": false, "err_msg": "Email already exists!"}'
+        )
 
     def test_login_success(self):
         """ Test successful login """
 
         # Register user
-        self.client.post('/api/register', {'email': 'test1000@email.com', 'username': 'test1000', 'password': 'test1000'}, format='json')
+        self.client.post('/api/register',
+                         {
+                             'email': 'test1000@email.com',
+                             'username': 'test1000',
+                             'password': 'test1000'
+                         },
+                         format='json')
 
         response = self.client.post('/api/login', {
             'username': 'test1000',
@@ -60,4 +72,7 @@ class AuthTest(TestCase):  # pylint: disable=unused-variable
             'password': 'test1000'
         }, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.content, b'{"auth": false, "err_msg": "Failed to Login"}')
+        self.assertEqual(
+            response.content,
+            b'{"auth": false, "err_msg": "Failed to Login"}'
+        )
