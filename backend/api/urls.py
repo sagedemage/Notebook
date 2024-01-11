@@ -4,7 +4,7 @@ from django.urls import path
 
 from .views import note, auth, test, jwt
 
-urlpatterns = [  # pylint: disable=unused-variable
+urlpatterns = [
     # authentication
     path('register', auth.register, name='register'),
     path('login', auth.login, name='login'),
