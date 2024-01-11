@@ -1,4 +1,4 @@
-""" Unit Tests """
+""" Authentication Testing """
 
 from django.test import TestCase
 from rest_framework import status
@@ -9,7 +9,7 @@ from rest_framework.test import APIClient
 
 
 class AuthTest(TestCase):
-    """ Authentication Testing """
+    """ Unit tests for Authentication """
     client = APIClient()
 
     def test_register_success(self):
