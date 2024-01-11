@@ -58,10 +58,12 @@ def edit_note(request):
 def delete_note(request):
     """
     Delete a note by id (Note id)
-    Request Parameters:
+    Route: /api/delete-note?note_id={number}
+    Example Route: /api/delete-note?note_id=1
+    URL Parameters:
     - note_id: integer
     """
-    note_id = request.data.get('note_id')
+    note_id = request.GET.get('note_id', '')
     note = Note.objects.filter(id=note_id)
     note.delete()
     return HttpResponse('Delete Note')
