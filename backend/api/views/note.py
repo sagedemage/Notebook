@@ -37,7 +37,7 @@ def edit_note(request):
     """
     Update a note by id (Note id)
     Request Parameters:
-    - id: integer
+    - note_id: integer
     - title: integer
     - description: integer
     """
