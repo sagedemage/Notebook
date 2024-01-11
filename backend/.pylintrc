@@ -104,7 +104,11 @@ enable=
     use-symbolic-message-instead,
     useless-suppression,
 
-# Disable the message, report, category or checker with the given id(s). You -- Google
+######################
+# Google Style Guide #
+######################
+
+# Disable the message, report, category or checker with the given id(s). You
 # can either give multiple identifiers separated by comma (,) or put this
 # option multiple times (only on the command line, not in the configuration
 # file where it should appear only once).You can also use "--disable=all" to
