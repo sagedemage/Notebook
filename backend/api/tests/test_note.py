@@ -77,3 +77,75 @@ class NoteTest(TestCase):
             response.content,
             b'Delete Note'
         )
+
+    def test_viewing_notes(self):
+        """ Test viewing notes (READ) """
+        # Register a new user
+        self.client.post('/api/register', {
+            'email': 'test1000@email.com',
+            'username': 'test1000',
+            'password': 'test1000'
+        }, format='json')
+
+        # Register a new user
+        self.client.post('/api/register', {
+            'email': 'test1001@email.com',
+            'username': 'test1001',
+            'password': 'test1001'
+        }, format='json')
+
+        # Add a note
+        self.client.post('/api/add-note', {
+            'title': 'First Note',
+            'description': 'This is the first note.',
+            'user_id': 1
+        }, format='json')
+
+        # Add a note
+        self.client.post('/api/add-note', {
+            'title': 'First Note',
+            'description': 'This is the first note.',
+            'user_id': 2
+        }, format='json')
+
+        # Add a note
+        self.client.post('/api/add-note', {
+            'title': 'Second Note',
+            'description': 'This is the second note.',
+            'user_id': 1
+        }, format='json')
+
+        # Add a note
+        self.client.post('/api/add-note', {
+            'title': 'Second Note',
+            'description': 'This is the second note.',
+            'user_id': 2
+        }, format='json')
+
+        # Add a note
+        self.client.post('/api/add-note', {
+            'title': 'Third Note',
+            'description': 'This is the third note.',
+            'user_id': 1
+        }, format='json')
+
+        # Add a note
+        self.client.post('/api/add-note', {
+            'title': 'Third Note',
+            'description': 'This is the third note.',
+            'user_id': 2
+        }, format='json')
+
+        response = self.client.get('/api/view-notes?user_id=1', format='json')
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertIn(b'{"id": 1, "title": "First Note", "description": "This is the first note."}', response.content)
+        self.assertIn(b'{"id": 3, "title": "Second Note", "description": "This is the second note."}', response.content)
+        self.assertIn(b'{"id": 5, "title": "Third Note", "description": "This is the third note."}', response.content)
+
+        response = self.client.get('/api/view-notes?user_id=2', format='json')
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertIn(b'{"id": 2, "title": "First Note", "description": "This is the first note."}', response.content)
+        self.assertIn(b'{"id": 4, "title": "Second Note", "description": "This is the second note."}', response.content)
+        self.assertIn(b'{"id": 6, "title": "Third Note", "description": "This is the third note."}', response.content)
