@@ -159,7 +159,7 @@ export default function Dashboard() {
     /* Delete Note Submission */
     const deleteNote = confirm('Are you sure you want to delete the note?');
     if (deleteNote === true) {
-      axios.delete('http://localhost:8000/api/delete-note?note_id=' + noteId
+      axios.delete('http://localhost:8000/api/delete-note?note_id=' + noteId,
       ).then(() => {
         // redirect to the dashboard
         window.location.reload();
