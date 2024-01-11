@@ -78,8 +78,8 @@ class NoteTest(TestCase):
             b'Delete Note'
         )
 
-    def test_viewing_notes(self):
-        """ Test viewing notes (READ) """
+    def test_viewing_the_notes(self):
+        """ Test viewing the notes (READ) """
         # Register a new user
         self.client.post('/api/register', {
             'email': 'test1000@email.com',
