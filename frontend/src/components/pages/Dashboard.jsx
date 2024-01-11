@@ -52,7 +52,7 @@ export default function Dashboard() {
   const handleShowEditNote = (noteId) => {
     /* Show Edit Note Modal */
     // Fetch Note
-    axios.get('http://localhost:8000/api/fetch-note?id=' + noteId,
+    axios.get('http://localhost:8000/api/fetch-note?note_id=' + noteId,
     ).then((response) => {
       if (noteId !== undefined) {
         setTitleEdit(response.data.title);

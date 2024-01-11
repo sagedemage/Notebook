@@ -91,10 +91,10 @@ def fetch_note(request):
     """
     Fetch a note by id (Note id)
     Route: /api/fetch-note?user_id={number}
-    Example Route: /api/fetch-note?user_id=1
+    Example Route: /api/fetch-note?note_id=1
     URL Parameters:
-    - user_id: integer
+    - note_id: integer
     """
-    note_id = request.GET.get('id', '')
+    note_id = request.GET.get('note_id', '')
     note = Note.objects.get(id=note_id)
     return JsonResponse({'title': note.title, 'description': note.description})
