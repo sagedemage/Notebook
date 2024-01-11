@@ -75,7 +75,7 @@ def view_notes(request):
     """
     Return the notes the user owns
     Request Parameters:
-    - note_id: integer
+    - user_id: integer
     """
     user_id = request.GET.get('user_id', '')
     user = User.objects.filter(id=user_id)
@@ -92,7 +92,7 @@ def view_notes(request):
 def fetch_note(request):
     """
     Fetch a note by id (Note id)
-    Route: /api/fetch-note?user_id={number}
+    Route: /api/fetch-note?note_id={number}
     Example Route: /api/fetch-note?note_id=1
     URL Parameters:
     - note_id: integer
