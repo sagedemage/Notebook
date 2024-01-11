@@ -33,4 +33,4 @@ jobs:
         run: pip install -r requirements.txt
       - name: Lint the backend program using pylint
         working-directory: ./backend
-        run: pylint --load-plugins pylint_django --django-settings-module=backend.settings api/*.py api/views/*.py backend/*.py
+        run: pylint --load-plugins pylint_django --django-settings-module=backend.settings api/*.py api/views/*.py backend/*.py manage.py
