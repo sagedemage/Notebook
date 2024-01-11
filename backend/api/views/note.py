@@ -38,8 +38,8 @@ def edit_note(request):
     Update a note by id (Note id)
     Request Parameters:
     - note_id: integer
-    - title: integer
-    - description: integer
+    - title: string
+    - description: string
     """
     serializer = NoteSerializer(data=request.data)
     if serializer.is_valid():
