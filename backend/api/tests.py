@@ -8,7 +8,7 @@ from rest_framework import status
 from rest_framework.test import APIClient
 
 
-class AuthTest(TestCase):  # pylint: disable=unused-variable
+class AuthTest(TestCase):
     """ Authentication Testing """
     client = APIClient()
 

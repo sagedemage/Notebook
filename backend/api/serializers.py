@@ -4,7 +4,7 @@ from rest_framework import serializers
 from .models import User, Note
 
 
-class UserSerializer(serializers.ModelSerializer):  # pylint: disable=unused-variable
+class UserSerializer(serializers.ModelSerializer):
     """ Verify User Fields """
 
     class Meta:
@@ -12,7 +12,7 @@ class UserSerializer(serializers.ModelSerializer):  # pylint: disable=unused-var
         fields = ['email', 'username', 'password']
 
 
-class NoteSerializer(serializers.ModelSerializer):  # pylint: disable=unused-variable
+class NoteSerializer(serializers.ModelSerializer):
     """ Verify Note Fields """
 
     class Meta:
