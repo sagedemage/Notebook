@@ -471,7 +471,9 @@ docstring-min-length=12
 # Include a hint for the correct naming format with invalid-name
 include-naming-hint=no
 
-# Naming style matching correct function names. (Snake Case)
+# Note: The defaults below for the naming convention follow the Google Python style guide
+
+# Naming style matching correct function names.
 function-naming-style=snake_case
 
 # Naming style matching correct variable names.
@@ -486,23 +488,25 @@ attr-naming-style=snake_case
 # Naming style matching correct argument names.
 argument-naming-style=snake_case
 
-# Naming style matching correct class attribute names.
-class-attribute-naming-style=any
-
 # Naming style matching correct class constant names.
 class-const-naming-style=UPPER_CASE
 
-# Naming style matching correct inline iteration names.
-inlinevar-naming-style=any
-
-# Naming style matching correct class names. (Pascal Case)
+# Naming style matching correct class names.
 class-naming-style=PascalCase
 
-# Naming style matching correct module names. (Snake Case)
+# Naming style matching correct module names.
 module-naming-style=snake_case
 
-# Naming style matching correct method names. (Snake Case)
+# Naming style matching correct method names.
 method-naming-style=snake_case
+
+# Note ends here
+
+# Naming style matching correct class attribute names.
+class-attribute-naming-style=any
+
+# Naming style matching correct inline iteration names.
+inlinevar-naming-style=any
 
 # List of decorators that define properties, such as abc.abstractproperty.
 property-classes=abc.abstractproperty
