@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ak@7#x56##0t=tsapst1h1$w=85w-nkjw%@d-++)0i3=cn!7xd'
+SECRET_KEY = 'django-insecure-ak@7#x56##0t=tsapst1h1$w=85w-nkjw%@d-++)0i3=cn!7xd'  # pylint: disable=line-too-long
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -86,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'notebook',
         'USER': 'root',
-        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -105,23 +105,23 @@ if os.environ.get('CI'):
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # pylint: disable=line-too-long
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # pylint: disable=line-too-long
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # pylint: disable=line-too-long
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # pylint: disable=line-too-long
     },
 ]
 
 # Allowed Origins
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
 ]
 
 # Internationalization
