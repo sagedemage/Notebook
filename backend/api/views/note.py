@@ -37,9 +37,9 @@ def edit_note(request):
     """
     Update a note by id (Note id)
     Request Parameters:
-    - id: integer
-    - title: integer
-    - description: integer
+    - note_id: integer
+    - title: string
+    - description: string
     """
     serializer = NoteSerializer(data=request.data)
     if serializer.is_valid():
@@ -58,10 +58,12 @@ def edit_note(request):
 def delete_note(request):
     """
     Delete a note by id (Note id)
-    Request Parameters:
+    Route: /api/delete-note?note_id={number}
+    Example Route: /api/delete-note?note_id=1
+    URL Parameters:
     - note_id: integer
     """
-    note_id = request.data.get('note_id')
+    note_id = request.GET.get('note_id', '')
     note = Note.objects.filter(id=note_id)
     note.delete()
     return HttpResponse('Delete Note')
@@ -72,8 +74,10 @@ def delete_note(request):
 def view_notes(request):
     """
     Return the notes the user owns
-    Request Parameters:
-    - note_id: integer
+    Route: /api/view-notes?user_id={number}
+    Example Route: /api/view-notes?user_id=1
+    URL Parameters:
+    - user_id: integer
     """
     user_id = request.GET.get('user_id', '')
     user = User.objects.filter(id=user_id)
@@ -90,11 +94,11 @@ def view_notes(request):
 def fetch_note(request):
     """
     Fetch a note by id (Note id)
-    Route: /api/fetch-note?user_id={number}
-    Example Route: /api/fetch-note?user_id=1
+    Route: /api/fetch-note?note_id={number}
+    Example Route: /api/fetch-note?note_id=1
     URL Parameters:
-    - user_id: integer
+    - note_id: integer
     """
-    note_id = request.GET.get('id', '')
+    note_id = request.GET.get('note_id', '')
     note = Note.objects.get(id=note_id)
     return JsonResponse({'title': note.title, 'description': note.description})

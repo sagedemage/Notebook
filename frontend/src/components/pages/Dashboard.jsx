@@ -52,7 +52,7 @@ export default function Dashboard() {
   const handleShowEditNote = (noteId) => {
     /* Show Edit Note Modal */
     // Fetch Note
-    axios.get('http://localhost:8000/api/fetch-note?id=' + noteId,
+    axios.get('http://localhost:8000/api/fetch-note?note_id=' + noteId,
     ).then((response) => {
       if (noteId !== undefined) {
         setTitleEdit(response.data.title);
@@ -159,9 +159,8 @@ export default function Dashboard() {
     /* Delete Note Submission */
     const deleteNote = confirm('Are you sure you want to delete the note?');
     if (deleteNote === true) {
-      axios.delete('http://localhost:8000/api/delete-note', {
-        data: { note_id: noteId },
-      }).then(() => {
+      axios.delete('http://localhost:8000/api/delete-note?note_id=' + noteId,
+      ).then(() => {
         // redirect to the dashboard
         window.location.reload();
       }).catch((err) => {
