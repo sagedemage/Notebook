@@ -91,3 +91,15 @@ class AuthTest(TestCase):
             response.content,
             b'{"auth": false, "err_msg": "Failed to Login"}'
         )
+
+    def test_login_failure_email_does_not_exist(self):
+        """ Test login failure when the email does not exist """
+        response = self.client.post('/api/login', {
+            'username': 'test1001@email.com',
+            'password': 'test1000'
+        }, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(
+            response.content,
+            b'{"auth": false, "err_msg": "Failed to Login"}'
+        )
