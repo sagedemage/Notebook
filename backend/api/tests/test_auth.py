@@ -44,8 +44,8 @@ class AuthTest(TestCase):
             b'{"registered": false, "err_msg": "Email already exists!"}'
         )
 
-    def test_login_success(self):
-        """ Test successful login """
+    def test_login_success_username_does_exist(self):
+        """ Test successful login when the username does exist """
 
         # Register user
         self.client.post('/api/register',
