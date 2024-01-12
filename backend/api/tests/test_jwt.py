@@ -19,7 +19,7 @@ class JwtTest(TestCase):
         self.assertEqual(value, {'auth': True, 'user_id': 2})
 
     def test_getting_decoded_token(self):
-        """ Test getting the decoded token """
+        """ Test getting the decoded token where the token is retrieved from the login request """
 
         # Register user
         self.client.post('/api/register',
