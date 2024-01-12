@@ -132,7 +132,7 @@ class AuthTest(TestCase):
 
     def test_login_failure_invalid_password_with_username(self):
         """ Test login failure with the username when the password is invalid """
-        # register a new user
+        # Register user
         self.client.post('/api/register', {
             'email': 'test1000@email.com',
             'username': 'test1000',
@@ -152,7 +152,7 @@ class AuthTest(TestCase):
 
     def test_login_failure_invalid_password_with_email(self):
         """ Test login failure with the email when the password is invalid """
-        # register a new user
+        # Register user
         self.client.post('/api/register', {
             'email': 'test1000@email.com',
             'username': 'test1000',
