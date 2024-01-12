@@ -85,6 +85,7 @@ class AuthTest(TestCase):
             'password': 'test1000'}, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertIn(b'"auth": true', response.content)
+        self.assertIn(b'"success_msg": "Successful Login"', response.content)
 
     def test_login_success_email_does_exist(self):
         """ Test successful login when the email does exist """
@@ -103,6 +104,7 @@ class AuthTest(TestCase):
             'password': 'test1000'}, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertIn(b'"auth": true', response.content)
+        self.assertIn(b'"success_msg": "Successful Login"', response.content)
 
     def test_login_failure_username_does_not_exist(self):
         """ Test login failure when the user does not exist """
