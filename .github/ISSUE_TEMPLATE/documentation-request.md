@@ -1,7 +1,7 @@
 ---
 name: Documentation request
 about: Suggest an idea for this project
-title: "(insert title) - [Documentation]"
+title: ''
 labels: documentation
 assignees: ''
 
