@@ -103,3 +103,27 @@ class AuthTest(TestCase):
             response.content,
             b'{"auth": false, "err_msg": "Failed to Login"}'
         )
+
+    def test_login_failure_invalid_password(self):
+        """ Test login failure when the password is invalid """
+        # Test with username
+        response = self.client.post('/api/login', {
+            'username': 'test1000',
+            'password': 'test1001'
+        }, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(
+            response.content,
+            b'{"auth": false, "err_msg": "Failed to Login"}'
+        )
+
+        # Test with email
+        response = self.client.post('/api/login', {
+            'username': 'test1000@email.com',
+            'password': 'test1001'
+        }, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(
+            response.content,
+            b'{"auth": false, "err_msg": "Failed to Login"}'
+        )
