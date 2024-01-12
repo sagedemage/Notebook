@@ -3,11 +3,20 @@
 from django.test import TestCase
 from rest_framework import status
 from rest_framework.test import APIClient
+from api.views.jwt import generate_token, decode_token
 
 
 class JwtTest(TestCase):
     """ Unit tests for JWT encoding and decoding operations """
     client = APIClient()
+
+    def test_encoding_and_decoding_token(self):
+        """ Test encoding and decoding a token """
+        user_id = 2
+        token = generate_token(user_id)
+
+        value = decode_token(token)
+        self.assertEqual(value, {'auth': True, 'user_id': 2})
 
     def test_getting_decoded_token(self):
         """ Test getting the decoded token """
