@@ -62,6 +62,24 @@ class AuthTest(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertIn(b'"auth": true', response.content)
 
+    def test_login_success_email_does_exist(self):
+        """ Test successful login when the email does exist """
+
+        # Register user
+        self.client.post('/api/register',
+                         {
+                             'email': 'test1000@email.com',
+                             'username': 'test1000',
+                             'password': 'test1000'
+                         },
+                         format='json')
+
+        response = self.client.post('/api/login', {
+            'username': 'test1000@email.com',
+            'password': 'test1000'}, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertIn(b'"auth": true', response.content)
+
     def test_login_failure(self):
         """ Test failure user registration when the user does not exist """
         response = self.client.post('/api/login', {
