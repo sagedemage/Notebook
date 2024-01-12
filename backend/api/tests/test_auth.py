@@ -9,6 +9,7 @@ class AuthTest(TestCase):
     """ Unit tests for Authentication """
     client = APIClient()
 
+    # User Registration tests
     def test_register_success(self):
         """ Test successful user registration """
         response = self.client.post('/api/register', {
@@ -64,6 +65,8 @@ class AuthTest(TestCase):
             response.content,
             b'{"registered": false, "err_msg": "Username already exists!"}'
         )
+
+    # User Login tests
 
     def test_login_success_username_does_exist(self):
         """ Test successful login when the username does exist """
