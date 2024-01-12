@@ -130,8 +130,8 @@ class AuthTest(TestCase):
             b'{"auth": false, "err_msg": "Failed to Login"}'
         )
 
-    def test_login_failure_invalid_password(self):
-        """ Test login failure when the password is invalid """
+    def test_login_failure_invalid_password_with_username(self):
+        """ Test login failure with the username when the password is invalid """
         # Test with username
         response = self.client.post('/api/login', {
             'username': 'test1000',
@@ -143,7 +143,8 @@ class AuthTest(TestCase):
             b'{"auth": false, "err_msg": "Failed to Login"}'
         )
 
-        # Test with email
+    def test_login_failure_invalid_password_with_email(self):
+        """ Test login failure with the email when the password is invalid """
         response = self.client.post('/api/login', {
             'username': 'test1000@email.com',
             'password': 'test1001'
