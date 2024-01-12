@@ -80,8 +80,8 @@ class AuthTest(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertIn(b'"auth": true', response.content)
 
-    def test_login_failure(self):
-        """ Test failure user registration when the user does not exist """
+    def test_login_failure_username_does_not_exist(self):
+        """ Test login failure when the user does not exist """
         response = self.client.post('/api/login', {
             'username': 'test1001',
             'password': 'test1000'
