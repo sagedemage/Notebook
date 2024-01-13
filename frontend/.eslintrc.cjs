@@ -83,7 +83,7 @@ module.exports = {
       code: 80,
       tabWidth: 2,
       ignoreUrls: true,
-      ignorePattern: 'goog\.(module|require)',
+      ignorePattern: '^import\\s.+\\sfrom\\s.+;$',
     }],
     '@stylistic/key-spacing': 'error',
     '@stylistic/keyword-spacing': 'error',
